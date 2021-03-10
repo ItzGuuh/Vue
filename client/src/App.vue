@@ -74,7 +74,7 @@
       <v-spacer />
 
       <!-- Horizontal NavBar links -->
-      <vtoolbar-items class="hidden-xs-only">
+      <v-toolbar-items class="hidden-xs-only">
         <v-btn
           flat
           v-for="item in horizontalNavItems"
@@ -87,7 +87,7 @@
           >{{item.icon}}</v-icon>
           {{item.title}}
         </v-btn>
-      </vtoolbar-items>
+      </v-toolbar-items>
     </v-toolbar>
 
     <!-- App content -->
