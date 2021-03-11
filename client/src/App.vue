@@ -1,22 +1,17 @@
 <template>
-  <v-app style="background=#E3E3EE">
+  <v-app style="background:#E3E3EE">
     <!-- Side NavBar -->
-    <v-navigation-drawer
-      app
-      temporary
-      fixed
-      v-model="sideNav"
-    >
+    <v-navigation-drawer app temporary fixed v-model="sideNav">
       <v-toolbar
-        color="accent"
-        dark
-        flat
+          color="accent"
+          dark
+          flat
       >
         <v-toolbar-side-icon @click="toggleSideNav"></v-toolbar-side-icon>
         <router-link
-          to="/"
-          tag="span"
-          style="cursor: pointer"
+            to="/"
+            tag="span"
+            style="cursor: pointer"
         >
           <h1 class="title pl-3">VueShare</h1>
         </router-link>
@@ -27,16 +22,16 @@
       <!-- Side Navbar Links -->
       <v-list>
         <v-list-tile
-          ripple
-          v-for="item in sideNavItems"
-          :key="item.title"
-          :to="item.link"
+            ripple
+            v-for="item in sideNavItems"
+            :key="item.title"
+            :to="item.link"
         >
           <v-list-tile-action>
-            <v-icon>{{item.icon}}</v-icon>
+            <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            {{item.title}}
+            {{ item.title }}
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -44,48 +39,49 @@
 
     <!-- Horizontal navbar -->
     <v-toolbar
-      fixed
-      color="primary"
-      dark
+        fixed
+        color="primary"
+        dark
     >
       <!-- App Title -->
       <v-toolbar-side-icon @click="toggleSideNav"></v-toolbar-side-icon>
       <v-toolbar-title class="hidden-xs-only">
         <router-link
-          to="/"
-          tag="span"
-          style="cursor: pointer"
+            to="/"
+            tag="span"
+            style="cursor: pointer"
         >
           VueShare
         </router-link>
       </v-toolbar-title>
 
-      <v-spacer />
+      <v-spacer/>
 
       <!-- Search Input -->
       <v-text-field
-        flex
-        prepend-icon="search"
-        placeholder="Search posts"
-        color="accent"
-        single-line
-        hide-details
+          flex
+          prepend-icon="search"
+          placeholder="Search posts"
+          color="accent"
+          single-line
+          hide-details
       />
-      <v-spacer />
+      <v-spacer/>
 
       <!-- Horizontal NavBar links -->
       <v-toolbar-items class="hidden-xs-only">
         <v-btn
-          flat
-          v-for="item in horizontalNavItems"
-          :key="item.title"
-          :to="item.link"
+            flat
+            v-for="item in horizontalNavItems"
+            :key="item.title"
+            :to="item.link"
         >
           <v-icon
-            class="hidden-sm-only"
-            left
-          >{{item.icon}}</v-icon>
-          {{item.title}}
+              class="hidden-sm-only"
+              left
+          >{{ item.icon }}
+          </v-icon>
+          {{ item.title }}
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
@@ -94,7 +90,7 @@
     <main>
       <v-container class="mt-4">
         <transition name="fade">
-          <router-view />
+          <router-view/>
         </transition>
 
       </v-container>
@@ -113,16 +109,16 @@ export default {
   computed: {
     horizontalNavItems() {
       return [
-        { icon: "chat", title: "Posts", link: "/posts" },
-        { icon: "lock_open", title: "Sing In", link: "/signin" },
-        { icon: "create", title: "Sign Up", link: "/signup" },
+        {icon: "chat", title: "Posts", link: "/posts"},
+        {icon: "lock_open", title: "Sing In", link: "/signin"},
+        {icon: "create", title: "Sign Up", link: "/signup"},
       ];
     },
     sideNavItems() {
       return [
-        { icon: "chat", title: "Posts", link: "/posts" },
-        { icon: "lock_open", title: "Sing In", link: "/signin" },
-        { icon: "create", title: "Sign Up", link: "/signup" },
+        {icon: "chat", title: "Posts", link: "/posts"},
+        {icon: "lock_open", title: "Sing In", link: "/signin"},
+        {icon: "create", title: "Sign Up", link: "/signup"},
       ];
     },
   },
@@ -140,9 +136,11 @@ export default {
   transition-property: opacity;
   transition-duration: 0.25s;
 }
+
 .fade-enter-active {
   transition-delay: 0.25s;
 }
+
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
